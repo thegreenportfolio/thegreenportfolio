@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Email Confirmed – The Green Portfolio</title>
+
+  <meta
+    name="description"
+    content="Your email has been confirmed. Choose your Bike Ride Green or Run Green activity portal."
+  >
+
+  <style>
+    :root {
+      --green: #16a34a;
+      --green-hover: #22c55e;
+      --text: #111111;
+      --muted: #6e6e73;
+      --card: rgba(255, 255, 255, 0.92);
+      --card-soft: #f8fff9;
+      --border: #dfe7e2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at top left,
+          #dcfce7 0,
+          transparent 40%
+        ),
+        linear-gradient(
+          180deg,
+          #e8fbea 0%,
+          #f7fff8 50%,
+          #e8fbea 100%
+        );
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 680px;
+      padding: 44px;
+
+      text-align: center;
+
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+
+      box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.10);
+    }
+
+    .checkmark {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 22px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: rgba(34, 197, 94, 0.12);
+      color: var(--green);
+
+      font-size: 38px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.7px;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      max-width: 500px;
+      margin: 0 auto 32px;
+
+      color: var(--muted);
+
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .choice-title {
+      margin-bottom: 18px;
+
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .app-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      min-height: 280px;
+      padding: 24px 20px;
+
+      color: var(--text);
+      text-decoration: none;
+
+      background: var(--card-soft);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+
+      transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .app-link:hover {
+      transform: translateY(-3px);
+
+      border-color: rgba(34, 197, 94, 0.45);
+
+      box-shadow:
+        0 12px 34px rgba(34, 197, 94, 0.14);
+    }
+
+    .app-link:focus-visible {
+      outline: 3px solid rgba(34, 197, 94, 0.25);
+      outline-offset: 3px;
+    }
+
+    .app-logo {
+      width: 104px;
+      height: 104px;
+      margin: 0 auto 18px;
+
+      display: block;
+
+      object-fit: cover;
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.18);
+    }
+
+    .app-name {
+      margin-bottom: 8px;
+
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .app-description {
+      color: var(--muted);
+
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .open-label {
+      margin-top: auto;
+      padding-top: 18px;
+
+      color: var(--green);
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .portfolio {
+      margin-top: 32px;
+      padding-top: 24px;
+
+      border-top: 1px solid var(--border);
+
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .portfolio strong {
+      color: var(--text);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f0fdf4;
+        --muted: #a3aea7;
+        --card: rgba(9, 30, 17, 0.94);
+        --card-soft: #102718;
+        --border: rgba(255, 255, 255, 0.09);
+      }
+
+      body {
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(34, 197, 94, 0.20),
+            transparent 42%
+          ),
+          linear-gradient(
+            180deg,
+            #06140b 0%,
+            #0b2414 50%,
+            #06140b 100%
+          );
+      }
+
+      .card {
+        box-shadow:
+          0 24px 80px rgba(0, 0, 0, 0.40);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px;
+        align-items: flex-start;
+      }
+
+      .card {
+        margin-top: 16px;
+        padding: 30px 20px;
+        border-radius: 24px;
+      }
+
+      .checkmark {
+        width: 64px;
+        height: 64px;
+
+        font-size: 34px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+      }
+
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .app-link {
+        min-height: 0;
+      }
+
+      .app-logo {
+        width: 96px;
+        height: 96px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+
+    <div class="checkmark" aria-hidden="true">
+      ✓
+    </div>
+
+    <h1>Welcome to The Green Portfolio</h1>
+
+    <p class="subtitle">
+      Your email has been successfully confirmed.
+      Select the app you would like to continue with.
+    </p>
+
+    <div class="choice-title">
+      Choose your activity portal
+    </div>
+
+    <div class="app-grid">
+
+      <a
+        class="app-link"
+        href="https://bikeridegreen.ca/"
+        aria-label="Open the Bike Ride Green portal"
+      >
+        <img
+          class="app-logo"
+          src="assets/bike-icon.png"
+          alt="Bike Ride Green app icon"
+        >
+
+        <div class="app-name">
+          Bike Ride Green
+        </div>
+
+        <div class="app-description">
+          View your cycling activities, personal benchmark,
+          private groups and challenges.
+        </div>
+
+        <div class="open-label">
+          Open Bike Portal →
+        </div>
+      </a>
+
+      <a
+        class="app-link"
+        href="https://run.thegreenportfolio.ca/"
+        aria-label="Open the Run Green portal"
+      >
+        <img
+          class="app-logo"
+          src="assets/RunWalk-icon.png"
+          alt="Run Green app icon"
+        >
+
+        <div class="app-name">
+          Run Green
+        </div>
+
+        <div class="app-description">
+          View your running and walking activities,
+          progress, private groups and challenges.
+        </div>
+
+        <div class="open-label">
+          Open Run Portal →
+        </div>
+      </a>
+
+    </div>
+
+    <div class="portfolio">
+      <strong>The Green Portfolio</strong><br>
+      Apps built for active lifestyles.
+    </div>
+
+  </main>
+</body>
+</html>
